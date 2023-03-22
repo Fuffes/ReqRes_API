@@ -8,9 +8,11 @@ class ResponseParser:
 
     def validate_json(self, schema):
         if isinstance(self.response_data, list):
+            print('hi from list')
             for item in self.response_data:
                 schema.parse_obj(item)
         else:
+            print('hi from single obj')
             schema.parse_obj(self.response_data)
         return self
 

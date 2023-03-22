@@ -18,6 +18,7 @@ def test_get_single_resource(ids, get_resources_list):
     if isinstance(ids, str) or ids not in range(1, total+1):
         ResponseParser(rec).validate_status_code(404)
     else:
+        ResponseParser(rec).validate_json(Resource)
         assert ResponseParser(rec).response_data['id'] == ids
 
 
