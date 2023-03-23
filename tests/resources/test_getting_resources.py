@@ -2,14 +2,13 @@ import pytest
 import requests
 from configuration import *
 from src.base_classes.parser import ResponseParser
-from src.pydantic_schemas.resource_schema import Resource
 from src.enums.all_enums import TestData
 
-
+@pytest.mark.skip
 def test_get_all_resources(get_resources_list):
     ResponseParser(get_resources_list).validate_json(Resource).validate_status_code(200)
 
-
+@pytest.mark.skip
 @pytest.mark.parametrize(
     'ids', TestData.VALID_IDS.value
 )

@@ -3,6 +3,7 @@ class ResponseParser:
     def __init__(self, response):
         self.response = response
         self.response_status_code = response.status_code
+        self.response_json = response.json()
         self.response_data = response.json().get('data')
         self.response_total_count = response.json().get('total')
         self.response_full_obj = None
