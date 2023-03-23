@@ -3,6 +3,7 @@ import requests
 from configuration import *
 from src.base_classes.parser import ResponseParser
 from src.pydantic_schemas.resource_schema import Resource
+from src.enums.all_enums import TestData
 
 
 def test_get_all_resources(get_resources_list):
@@ -10,7 +11,7 @@ def test_get_all_resources(get_resources_list):
 
 
 @pytest.mark.parametrize(
-    'ids', [1, 13, 'asd', '@#$%^&*()_', 0, 10000]
+    'ids', TestData.VALID_IDS.value
 )
 def test_get_single_resource(ids, get_resources_list):
     rec = requests.get(f'https://reqres.in/api/unknown/{ids}')
