@@ -3,7 +3,8 @@ from pydantic.types import List
 
 from ex import ee
 from src.pydantic_schemas.support import Support
-from src.pydantic_schemas.user_data import UserData
+from src.pydantic_schemas.data_schemas import UserData, ResourceData
+
 
 
 class CommonUserSchema(BaseModel):
@@ -14,5 +15,13 @@ class CommonUserSchema(BaseModel):
     data: List[UserData]
     support: Support
 
-cop = CommonUserSchema.parse_obj(ee)
-print(cop)
+class CommonResourceSchema(BaseModel):
+    page: int
+    per_page: int
+    total: int
+    total_pages: int
+    data: List[ResourceData]
+    support: Support
+
+# cop = CommonUserSchema.parse_obj(ee)
+# print(cop)

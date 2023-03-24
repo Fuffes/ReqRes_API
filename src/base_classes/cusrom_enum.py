@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class CustomEnum(Enum):
+class EnumList():
 
     @classmethod
     def list(cls):
