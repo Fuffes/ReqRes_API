@@ -7,6 +7,7 @@ def test_update_existing_user(patch_user):
     user = ResponseParser(patch_user(TestData.VALID_ID.value[0])).validate_full_json(UpdatedResp)
     assert user.response_status_code == 200
 
+
 def test_update_non_existent_user(patch_user):
     user = ResponseParser(patch_user(TestData.INVALID_ID.value[0])).validate_full_json(UpdatedResp)
     print(TestData.INVALID_ID.value[0])

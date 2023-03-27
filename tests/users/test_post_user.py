@@ -16,6 +16,3 @@ def test_create_emp(post):
     ResponseParser(post(USER_LIST, TestData.EMPT_USER_TO_CREATE.value)) \
         .validate_full_json(CreatedRespEmpt) \
         .validate_status_code(201)
-
-
-

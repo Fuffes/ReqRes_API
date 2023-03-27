@@ -11,7 +11,7 @@ from configuration import REGISTRATION_URL
              ]
 )
 def test_valid_registr(post, data):
-    ResponseParser(post(REGISTRATION_URL,data)).validate_status_code(200)
+    ResponseParser(post(REGISTRATION_URL, data)).validate_status_code(200)
 
 
 @pytest.mark.parametrize(

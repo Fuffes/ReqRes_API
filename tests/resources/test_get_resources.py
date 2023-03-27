@@ -7,8 +7,8 @@ from src.pydantic_schemas.data_schemas import ResourceData
 
 
 def test_get_all_resources(get_resources):
-    resources = ResponseParser(get_resources())\
-        .validate_json_data(ResourceData)\
+    resources = ResponseParser(get_resources()) \
+        .validate_json_data(ResourceData) \
         .validate_full_json(CommonResourceSchema)
     assert resources.response_status_code == 200
 
@@ -27,4 +27,3 @@ def test_get_valid_resource(id, get_resources):
 def test_get_invalid_resource(id, get_resources):
     assert ResponseParser(get_resources(id)).response_json == {}
     assert ResponseParser(get_resources(id)).response_status_code == 404, ErrorMessages.WRONG_STATUS_CODE.value
-
