@@ -38,15 +38,8 @@ def delete_user():
 
 
 @pytest.fixture
-def post_user():
-    def post_data(data):
-        return requests.post(USER_LIST, data)
+def post():
+    def post_data(url, data):
+        return requests.post(url, data)
 
     return post_data
-
-@pytest.fixture
-def login():
-    def log_data(data):
-        return requests.post(LOGIN_URL, data)
-
-    return log_data

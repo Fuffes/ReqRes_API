@@ -3,7 +3,7 @@ from enum import Enum
 from src.base_classes.cusrom_enum import EnumList
 
 
-class TestData(Enum):
+class TestData(EnumList):
     VALID_ID = list(range(1, 4))
     INVALID_ID = ['asd', '!@#$']
     VALID_USER_TO_CREATE = {"name": "dsd", "job": "dsd"}
