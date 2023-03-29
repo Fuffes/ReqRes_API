@@ -26,3 +26,11 @@ def patch_resource():
         return requests.patch(f'{RESOURCE_LIST}/{id}')
 
     return patch_single_resource
+
+
+@pytest.fixture
+def delete_resource():
+    def delete_single_resource(id):
+        return requests.delete(f'{RESOURCE_LIST}/{id}')
+
+    return delete_single_resource
